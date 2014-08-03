@@ -5,7 +5,7 @@ import jp.nyatla.mimic.mbedjs.javaapi.*;
 
 /**
  * http://mbed.org/users/chris/code/LM75B/
- * ‚ğmbedJS-Java‚ÉˆÚA‚µ‚½‚à‚Ì‚Å‚·
+ * ã‚’mbedJS-Javaã«ç§»æ¤ã—ãŸã‚‚ã®ã§ã™
  * @author hara4_000
  *
  */
@@ -48,7 +48,6 @@ public class LM75B {
 	{
 		byte[] str = {0x00};
 		I2C.ReadResult rr = null;
-		//byte[] ret = new byte[2];
 		try {
 			i2c.write(addr , str , false);
 			rr = i2c.read(addr , 2 , false);
@@ -57,7 +56,6 @@ public class LM75B {
 			e.printStackTrace();
 		}
 
-		//ret = rr.data;
 		float ret;
 		ret = ((rr.data[0]<<8)|rr.data[1])/256.0f;
 		
